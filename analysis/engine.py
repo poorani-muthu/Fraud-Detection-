@@ -227,6 +227,8 @@ def run():
 
     # ── 7. SAVE ─────────────────────────────────────────────────
     print("\n[7/7] Saving...")
+    os.makedirs(os.path.join(BASE, 'models'), exist_ok=True)
+    os.makedirs(os.path.join(BASE, 'static'), exist_ok=True)
     pkl_path = os.path.join(BASE, 'models', 'best_model.pkl')
     with open(pkl_path, 'wb') as f:
         pickle.dump({
