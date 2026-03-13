@@ -38,6 +38,7 @@ def gen_fraud(n):
     return df
 
 if __name__ == '__main__':
+    os.makedirs(os.path.join(BASE, 'data'), exist_ok=True)
     df = pd.concat([gen_legit(N_LEGIT), gen_fraud(N_FRAUD)], ignore_index=True)
     df = df.sample(frac=1, random_state=42).reset_index(drop=True)
     out = os.path.join(BASE, 'data', 'creditcard.csv')
