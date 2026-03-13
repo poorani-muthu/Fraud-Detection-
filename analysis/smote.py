@@ -30,4 +30,3 @@ def smote_oversample(X, y, target_ratio=0.5, k=5, random_state=42):
     # Shuffle
     perm = rng.permutation(len(X_out))
     return X_out[perm], y_out[perm]
-
